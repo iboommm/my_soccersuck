@@ -10,3 +10,9 @@ body {
 .mat-card {
     margin: 0.25rem;
 }
+
+.up-to-top {
+    position: fixed !important;
+    bottom: 1rem;
+    right: 1rem;
+}

@@ -1,9 +1,13 @@
-<div *ngIf="board_list.length > 0">
-    <mat-card *ngFor="let news of board_list" [ngClass]="{'bg-secondary text-white' : news.pin}">
-        <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
-    </mat-card>
-</div>
-
-<mat-card *ngIf="board_list.length === 0">
-    <img class="img-fluid" src="/assets/images/loading.gif" alt="">
-</mat-card>
+<mat-tab-group>
+    <mat-tab *ngFor="let tab of tabs">
+        <ng-template mat-tab-label>
+            <div><i class="fa fa-{{ tab.icon }}"></i> {{tab.name}}</div>
+        </ng-template>
+        <mat-card *ngFor="let news of tab.list" routerLink="/topic/{{ news.id}}" [ngClass]="{'bg-secondary text-white' : news.pin}">
+            <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
+        </mat-card>
+        <div *ngIf="tab.list.length === 0">
+            <img class="img-fluid" src="/assets/images/loading.gif" alt="">
+        </div>
+    </mat-tab>
+</mat-tab-group>

@@ -1,7 +1,7 @@
-<div class="rows">
-    <button class="col" mat-raised-button routerLink="/home" [color]="router_color('home') ? 'primary':''"><i class="fa fa-home"></i> หน้าแรก</button>
-    <button class="col" mat-raised-button routerLink="/board/{{ board }}" [color]="router_color('board') ? 'primary':''"><i class="fa fa-users"></i> เว็บบอร์ด</button>
-</div>
-
-
+<div id="top"></div>
+<nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+          {{link.label}}
+        </a>
+</nav>
 <router-outlet></router-outlet>

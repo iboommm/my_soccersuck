@@ -11,6 +11,12 @@ export class AppComponent {
   title = "My Soccersuck";
   board: Number = 1;
 
+  navLinks = [
+    {path: "/home", label: "หน้าแรก"},
+    {path: "/board", label: "เว็บบอร์ด"},
+    {path: "/topic", label: "กระทู้"}
+  ]
+
   constructor(private router: Router) {}
 
   router_color(mode) {
@@ -18,13 +24,5 @@ export class AppComponent {
       return true;
     }
     return false;
-  }
-
-  go(page) {
-    if (page == "board") {
-      console.log(`/board/${this.board}`)
-      this.router.navigateByUrl(`/board/${this.board}`);
-    }
-    this.router.navigateByUrl(`/${page}`);
   }
 }

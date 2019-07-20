@@ -1,1 +1,19 @@
-<p>topic works!</p>
+<div class="bg-light">
+    <div *ngIf="comment.length === 0">
+        <img class="img-fluid" src="/assets/images/loading.gif" alt="">
+    </div>
+    <mat-card class="p-2" *ngIf="topic">
+        <b><i class="fa fa-comments"></i> {{ topic.title}}</b>
+        <hr /><i class="fa fa-user"></i><b> {{ topic.create_by }}</b> : <i class="fa fa-clock-o"></i> {{ topic.create_time}}
+        <hr />
+        <div style="overflow: scroll" [innerHtml]="generate(topic.description)"></div>
+
+    </mat-card>
+    <mat-card *ngFor="let row of comment">
+        <i class="fa fa-user"></i><b> {{ row.create_by }}</b> : <i class="fa fa-clock-o"></i>{{ row.create_time}}
+        <hr />
+        <div [innerHtml]="generate(row.description)"></div>
+    </mat-card>
+</div>
+
+<button class="up-to-top" (click)="gotop();" mat-fab color="primary"><i class="fa fa-arrow-up"></i></button>

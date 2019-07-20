@@ -1,28 +1,31 @@
 <mat-tab-group *ngIf="news_big_headine">
     <mat-tab label="ข่าวใหญ่">
-        <mat-card class="big-news-headline" *ngIf="news_big_headine">
-            <mat-card-header>
-                <mat-card-title>{{ news_big_headine.title }}</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image [src]="news_big_headine.img" [alt]="news_big_headine.title" [title]="news_big_headine.title">
-            <mat-card-content>
-                <p>
-                    {{ news_big_headine.description }}
-                </p>
-            </mat-card-content>
-        </mat-card>
-
-        <mat-card *ngFor="let news of news_big_list ">
-            <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
-        </mat-card>
+        <ng-template matTabContent>
+            <mat-card class="big-news-headline" *ngIf="news_big_headine">
+                <mat-card-header>
+                    <mat-card-title>{{ news_big_headine.title }}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="news_big_headine.img" [alt]="news_big_headine.title" [title]="news_big_headine.title">
+                <mat-card-content>
+                    <p>
+                        {{ news_big_headine.description }}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card *ngFor="let news of news_big_list ">
+                <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
+            </mat-card>
+        </ng-template>
     </mat-tab>
     <mat-tab label="ข่าวประจำวัน">
-        <mat-card *ngFor="let news of news_today_list ">
-            <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
-        </mat-card>
-        <mat-card *ngFor="let news of news_yesterday_list ">
-            <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
-        </mat-card>
+        <ng-template matTabContent>
+            <mat-card *ngFor="let news of news_today_list ">
+                <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
+            </mat-card>
+            <mat-card *ngFor="let news of news_yesterday_list ">
+                <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
+            </mat-card>
+        </ng-template>
     </mat-tab>
 </mat-tab-group>
 
