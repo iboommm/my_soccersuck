@@ -1,1 +1,9 @@
-<p>board works!</p>
+<div *ngIf="board_list.length > 0">
+    <mat-card *ngFor="let news of board_list" [ngClass]="{'bg-secondary text-white' : news.pin}">
+        <span><img [src]="news.icon" alt=""> {{ news.title }}</span>
+    </mat-card>
+</div>
+
+<mat-card *ngIf="board_list.length === 0">
+    <img class="img-fluid" src="/assets/images/loading.gif" alt="">
+</mat-card>

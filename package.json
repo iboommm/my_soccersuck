@@ -21,9 +21,13 @@
         "@angular/platform-browser": "~8.2.0-next.2",
         "@angular/platform-browser-dynamic": "~8.2.0-next.2",
         "@angular/router": "~8.2.0-next.2",
+        "@trademe/ng-defer-load": "^3.0.1",
         "axios": "^0.19.0",
+        "bootstrap": "^4.3.1",
         "core-js": "^2.5.4",
         "font-awesome": "^4.7.0",
+        "lodash": "^4.17.15",
+        "ng-lazyload-image": "^6.0.0",
         "rxjs": "~6.5.2",
         "tslib": "^1.9.0",
         "zone.js": "~0.9.1"
