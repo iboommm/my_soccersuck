@@ -1,8 +1,9 @@
 <mat-tab-group *ngIf="news_big_headine">
     <mat-tab label="ข่าวใหญ่">
         <ng-template matTabContent>
-            <div routerLink="/topic/{{ news_big_headine.id}}">
-                <mat-card class="big-news-headline" *ngIf="news_big_headine">
+
+            <mat-card class="big-news-headline" *ngIf="news_big_headine">
+                <div routerLink="/topic/{{ news_big_headine.id}}">
                     <mat-card-header>
                         <mat-card-title>{{ news_big_headine.title }}</mat-card-title>
                     </mat-card-header>
@@ -12,11 +13,12 @@
                             {{ news_big_headine.description }}
                         </p>
                     </mat-card-content>
-                </mat-card>
-                <mat-card *ngFor="let news of news_big_list ">
-                    <div><img [src]="news.icon" alt=""> {{ news.title }}</div>
-                </mat-card>
-            </div>
+                </div>
+            </mat-card>
+            <mat-card *ngFor="let news of news_big_list ">
+                <div routerLink="/topic/{{ news.id}}"><img [src]="news.icon" alt=""> {{ news.title }}</div>
+            </mat-card>
+
         </ng-template>
     </mat-tab>
     <mat-tab label="ข่าวประจำวัน">
