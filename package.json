@@ -27,7 +27,7 @@
         "bootstrap": "^4.3.1",
         "core-js": "^2.5.4",
         "font-awesome": "^4.7.0",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.21",
         "ng-lazyload-image": "^6.0.0",
         "rxjs": "~6.5.2",
         "time-ago": "^0.2.1",
